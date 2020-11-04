@@ -1,7 +1,10 @@
 body {
     font-family: arial;
     font-size: 1.1em;
+}
 
+#topImg {
+  opacity: 0.5;
 }
 
 #Burger_menu_div{
@@ -14,7 +17,6 @@ body {
 
 #Burger_menu{
   text-align: center;
-
 }
 
 #Burger_menu_div dl{
