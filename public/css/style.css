@@ -1,4 +1,53 @@
 body {
-    font-family: "Courier New";
-    color: rgb(255, 0, 0);
+    font-family: arial;
+    font-size: 1.1em;
+
+}
+
+#Burger_menu_div{
+  background-color: black;
+  color: white;
+  padding: 10pt;
+  border-style: dashed;
+  margin-bottom: 10pt;
+}
+
+#Burger_menu{
+  text-align: center;
+
+}
+
+#Burger_menu_div dl{
+  padding: 20pt;
+
+}
+#Beer_menu table{
+  padding: 5pt;
+  border-style: dashed;
+}
+
+#Beer_menu th, td{
+  padding: 5pt;
+}
+
+#Customer_information_div{
+  padding: 50pt;
+  border-color: black;
+  border-style: dashed;
+}
+
+input[type=submit]{
+  padding: 10pt;
+  margin: 20pt;
+}
+
+input[type=submit]:hover {
+    background-color: green;
+    cursor:pointer;
+}
+
+.alergi{
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-weight: bold;
 }

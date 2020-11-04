@@ -5,7 +5,8 @@
   <title>GoBurger365</title>   <!-- Detta är en Kommentar -->
   <meta charset="utf-8"/>
 
-  <link rel="stylesheet" type="text/css" href="public/css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/reset.css"> 
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 
 </head>
 
@@ -14,58 +15,60 @@
   <main>
 
     <div id="Top">
-    <h1>Welcome to GoBurger365 </h1>
+      <h1>Welcome to GoBurger365 </h1>
     </div>
 
-  <div id="Burger menu div"> <!-- Välja burgare, menu -->
-    <section>
+    <div id="Burger_menu_div"> <!-- Välja burgare, menu -->
+
       <h2>Select burger</h2>
 
       <p>This is where you execute burger selection</p>
-      <div id="Burger menu" style="height:100%; width:100%; overflow: hidden;">
+      <div id="Burger_menu" >
 
-        <div id="Basic Burger" style="float: left; width:33%;">
+        <div id="Basic_Burger" style="float: left; width:33%;">
 
-          <h3 style="text-align:center;">Basic Burger</h3>
+          <h3>Basic Burger</h3>
 
           <img src="https://hankstruebbq.se/wp-content/uploads/2019/06/Smash_burgers.jpg" alt="Burger 1" title="Another in-line element" width="60%">
 
           <dl>
             <dt>Basic Burger, 130kr</dt>
             <li>200g Groundbeef</li>
-            <li>Contains gluten</li>
+            <li>Contains <span class="alergi">gluten</span></li>
           </dl>
         </div>
 
-        <div id="Veggo Burger" style="float: left; width:33%;">
+        <div id="Veggo_Burger" style="float: left; width:33%;">
 
-          <h3 style="text-align:center;">Veggo Burgare</h3>
+          <h3>Veggo Burgare</h3>
 
           <img src="https://static01.nyt.com/images/2020/01/22/dining/jo-black-bean-burgers/merlin_167531589_227b9414-ffad-4b44-ae53-67483bd2bae5-articleLarge.jpg" alt="Burger 2, veg" title="Another in-line element" width="60%">
 
           <dl>
             <dt>Basic Vegetarian Burger, 130kr</dt>
             <li>150g Vegetarian patty</li>
+            <li><span class="alergi">Vegetarian</span></li>
             <li>Gluten free</li>
           </dl>
         </div>
 
-        <div id="BBQ Burger" style="float: left; width:33%;">
+        <div id="BBQ_Burger" style="float: left; width:33%;">
 
-          <h3 style="text-align:center;">BBQ Burgare</h3>
+          <h3> BBQ Burgare</h3>
 
           <img src="https://media-cdn.tripadvisor.com/media/photo-s/17/ba/a6/31/burger.jpg" alt="Burger 3, BBQ" title="Another in-line element" width="60%">
 
           <dl>
             <dt>BBQ Burger with fries, 160kr</dt>
             <li>300g Groundbeef</li>
+            <li><span class="alergi">Cheese</span></li>
             <li>Contains gluten</li>
           </dl>
         </div>
 
       </div>
 
-      <div id="Beer menu" style="height:100%; width:100%; float: center">
+      <div id="Beer_menu">
         <table align="center">
           <thead>
             <tr>
@@ -93,14 +96,12 @@
           </tbody>
         </table>
       </div>
-    </section>
-  </div>
 
-  <div id="Customer information div"> <!-- Skriv in information o beställ -->
+    </div>
 
-    <div id="info">
+    <div id="Customer_information_div"> <!-- Skriv in information o beställ -->
 
-      <section id"Customer information"> <!-- Kundinformation -->
+      <div id="info">  <!-- Kundinformation -->
 
         <h2>Customer information</h2>
 
@@ -127,47 +128,44 @@
             <input type="text" id="house" name="house" placeholder="House nr">
           </p>
         </form>
-      </section>
 
+      </div>
+
+      <div id="Payment method">
+
+        <h3>Payment Method:</h3>
+
+        <form class="PaymentInfo" action="index.html" method="post">
+
+          <p>
+            <label for="PaymentMethod">Choose how to pay:</label><br>
+            <select id="PaymentMethod" name="PayMeth">
+              <option selected="selected">Swish</option>
+              <option>PayPal</option>
+              <option>Card</option>
+              <option>Klarna</option>
+              <option>Cash in an envelope</option>
+            </select>
+          </p>
+        </form>
+      </div>
+
+      <div id="Gender select">
+        <form class="GenderInfo" action="index.html" method="post">
+          <input type="radio" id="male" name="gender" value="male">
+          <label for="male">Male</label><br>
+          <input type="radio" id="female" name="gender" value="female">
+          <label for="female">Female</label><br>
+          <input type="radio" id="other" name="gender" value="other">
+          <label for="other">Other</label>
+        </form>
+      </div>
     </div>
 
-    <div id="Payment method">
-
-
-      <h3>Payment Method:</h3>
-
-      <form class="PaymentInfo" action="index.html" method="post">
-
-        <p>
-          <label for="PaymentMethod">Choose how to pay:</label><br>
-          <select id="PaymentMethod" name="PayMeth">
-            <option selected="selected">Swish</option>
-            <option>PayPal</option>
-            <option>Card</option>
-            <option>Klarna</option>
-            <option>Cash in an envelope</option>
-          </select>
-        </p>
-      </form>
+    <div id="OrderButton">
+      <input type="submit" value="Place Order">
     </div>
-
-    <div id="Gender select">
-      <form class="GenderInfo" action="index.html" method="post">
-
-
-        <input type="radio" id="male" name="gender" value="male">
-        <label for="male">Male</label><br>
-        <input type="radio" id="female" name="gender" value="female">
-        <label for="female">Female</label><br>
-        <input type="radio" id="other" name="gender" value="other">
-        <label for="other">Other</label>
-      </form>
-    </div>
-
-    <input type="submit" value="Place Order">
-
-  </div>
-</main>
+  </main>
   <hr><!-- Streck -->
 
   <footer>
