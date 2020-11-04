@@ -1,9 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>DELI-VERY</title>
-    </head>
-    <body>
-        <h1>Tjena </h1>
-    </body>
+
+<head>
+  <title>GoBurger365</title>   <!-- Detta är en Kommentar -->
+  <meta charset="utf-8"/>
+
+  <link rel="stylesheet" type="text/css" href="public/css/style.css">
+
+</head>
+
+<body>
+
+  <main>
+
+    <div id="Top">
+    <h1>Welcome to GoBurger365 </h1>
+    </div>
+
+  <div id="Burger menu div"> <!-- Välja burgare, menu -->
+    <section>
+      <h2>Select burger</h2>
+
+      <p>This is where you execute burger selection</p>
+      <div id="Burger menu" style="height:100%; width:100%; overflow: hidden;">
+
+        <div id="Basic Burger" style="float: left; width:33%;">
+
+          <h3 style="text-align:center;">Basic Burger</h3>
+
+          <img src="https://hankstruebbq.se/wp-content/uploads/2019/06/Smash_burgers.jpg" alt="Burger 1" title="Another in-line element" width="60%">
+
+          <dl>
+            <dt>Basic Burger, 130kr</dt>
+            <li>200g Groundbeef</li>
+            <li>Contains gluten</li>
+          </dl>
+        </div>
+
+        <div id="Veggo Burger" style="float: left; width:33%;">
+
+          <h3 style="text-align:center;">Veggo Burgare</h3>
+
+          <img src="https://static01.nyt.com/images/2020/01/22/dining/jo-black-bean-burgers/merlin_167531589_227b9414-ffad-4b44-ae53-67483bd2bae5-articleLarge.jpg" alt="Burger 2, veg" title="Another in-line element" width="60%">
+
+          <dl>
+            <dt>Basic Vegetarian Burger, 130kr</dt>
+            <li>150g Vegetarian patty</li>
+            <li>Gluten free</li>
+          </dl>
+        </div>
+
+        <div id="BBQ Burger" style="float: left; width:33%;">
+
+          <h3 style="text-align:center;">BBQ Burgare</h3>
+
+          <img src="https://media-cdn.tripadvisor.com/media/photo-s/17/ba/a6/31/burger.jpg" alt="Burger 3, BBQ" title="Another in-line element" width="60%">
+
+          <dl>
+            <dt>BBQ Burger with fries, 160kr</dt>
+            <li>300g Groundbeef</li>
+            <li>Contains gluten</li>
+          </dl>
+        </div>
+
+      </div>
+
+      <div id="Beer menu" style="height:100%; width:100%; float: center">
+        <table align="center">
+          <thead>
+            <tr>
+              <th>Beer name</th>
+              <th>Type</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Samuel Adams Boston Lager</td>
+              <td>Lager</td>
+              <td>69.00</td>
+            </tr>
+            <tr>
+              <td>Marble Brewery Earl Grey IPA</td>
+              <td>India Pale Ale</td>
+              <td>79.00</td>
+            </tr>
+            <tr>
+              <td>Innis &amp; Gunn Oak Aged</td>
+              <td>Ale</td>
+              <td>55.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <div id="Customer information div"> <!-- Skriv in information o beställ -->
+
+    <div id="info">
+
+      <section id"Customer information"> <!-- Kundinformation -->
+
+        <h2>Customer information</h2>
+
+        <h4>Delivery Information</h4>
+
+        <form class="CustInfo" action="index.html" method="post">
+
+          <p>
+            <label for="name">First and last name</label><br>
+            <input type="text" id="name" name="name" required="required" placeholder="First and last name">
+          </p>
+
+          <p>
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="em" required="required" placeholder="E-mail address">
+          </p>
+
+          <p>
+            <label for="street">Street</label><br>
+            <input type="text" id="street" name="street" placeholder="Street">
+          </p>
+          <p>
+            <label for="house">House nuber</label><br>
+            <input type="text" id="house" name="house" placeholder="House nr">
+          </p>
+        </form>
+      </section>
+
+    </div>
+
+    <div id="Payment method">
+
+
+      <h3>Payment Method:</h3>
+
+      <form class="PaymentInfo" action="index.html" method="post">
+
+        <p>
+          <label for="PaymentMethod">Choose how to pay:</label><br>
+          <select id="PaymentMethod" name="PayMeth">
+            <option selected="selected">Swish</option>
+            <option>PayPal</option>
+            <option>Card</option>
+            <option>Klarna</option>
+            <option>Cash in an envelope</option>
+          </select>
+        </p>
+      </form>
+    </div>
+
+    <div id="Gender select">
+      <form class="GenderInfo" action="index.html" method="post">
+
+
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label>
+      </form>
+    </div>
+
+    <input type="submit" value="Place Order">
+
+  </div>
+</main>
+  <hr><!-- Streck -->
+
+  <footer>
+
+    <p> &COPY Egon Axelsson, 2020, STS3 IT</p>
+
+  </footer>
+</body>
 </html>
