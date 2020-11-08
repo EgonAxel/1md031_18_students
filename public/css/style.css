@@ -3,7 +3,25 @@ body {
     font-size: 1.1em;
 }
 
-#topImg {
+#Top{
+  overflow:hidden;
+  height: auto;
+}
+
+#Top h1{
+  font-size: 3em;
+  margin-top: -120pt;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500pt; /* Need a specific value to work */
+}
+
+#TopImg {
+  width:100%;
+  height:auto;
   opacity: 0.5;
 }
 
@@ -12,11 +30,41 @@ body {
   color: white;
   padding: 10pt;
   border-style: dashed;
-  margin-bottom: 10pt;
 }
 
 #Burger_menu{
-  text-align: center;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 33% 33% 33%;
+  background-color: black;
+  color: white;
+  padding: 10pt;
+  margin-bottom: 10pt;
+}
+
+.Burger {
+     background-color: #444;
+     color: #fff;
+     border-radius: 5px;
+     padding: 20px;
+     font-size: 150%;
+     text-align: center;
+}
+.Burger img{
+  width: 100%;
+}
+
+.Basic_Burger {
+    grid-row: 1;
+    grid-column: 1;
+ }
+ .Veggo_Burger {
+     grid-row: 1;
+     grid-column: 2;
+ }
+ .BBQ_Burger {
+    grid-row: 1;
+    grid-column: 3;
 }
 
 #Burger_menu_div dl{
@@ -52,4 +100,27 @@ input[type=submit]:hover {
   text-transform: uppercase;
   text-decoration: underline;
   font-weight: bold;
+}
+
+
+@media screen and (max-device-width: 800px) {
+   body {
+    font-size: 150%;
+  }
+#Burger_menu{
+  grid-gap: 40px;
+  grid-template-columns: 100%;
+}
+  .Basic_Burger {
+      grid-row: 1;
+      grid-column: 1;
+   }
+   .Veggo_Burger {
+       grid-row: 2;
+       grid-column: 1;
+   }
+   .BBQ_Burger {
+      grid-row: 3;
+      grid-column: 1;
+  }
 }

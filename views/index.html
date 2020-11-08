@@ -6,8 +6,14 @@
   <meta charset="utf-8"/>
 
   <!-- <link rel="stylesheet" type="text/css" href="css/reset.css"> -->
+  <!--  C:\Users\egona\github\1md031_18_students>node app.js -->
 
   <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <script src="https://vuejs.org/js/vue.js"></script>
+
+  <script src="js/js_script.js"></script>
+  <script src="js/vue_script.js"></script>
 
 </head>
 
@@ -16,9 +22,10 @@
   <main>
 
     <div id="Top">
+
+      <img id="TopImg" src="https://www.cityworksrestaurant.com/pittsburgh/wp-content/uploads/sites/7/2018/02/header-food-burgers-beer-1600-300.png" alt="Header" title="Burger restaurant header">
       <h1>Welcome to GoBurger365 </h1>
-      
-      <img id="TopImg" src="https://www.cityworksrestaurant.com/pittsburgh/wp-content/uploads/sites/7/2018/02/header-food-burgers-beer-1600-300.png" alt="Header" title="Burger restaurant header" width="100%">
+
     </div>
 
     <div id="Burger_menu_div"> <!-- Välja burgare, menu -->
@@ -28,11 +35,11 @@
       <p>This is where you execute burger selection</p>
       <div id="Burger_menu" >
 
-        <div id="Basic_Burger" style="float: left; width:33%;">
+        <div class="Burger Basic_Burger">
 
           <h3>Basic Burger</h3>
 
-          <img src="https://hankstruebbq.se/wp-content/uploads/2019/06/Smash_burgers.jpg" alt="Burger 1" title="Another in-line element" width="60%">
+          <img src="https://hankstruebbq.se/wp-content/uploads/2019/06/Smash_burgers.jpg" alt="Burger 1" title="Another in-line element" >
 
           <dl>
             <dt>Basic Burger, 130kr</dt>
@@ -41,11 +48,11 @@
           </dl>
         </div>
 
-        <div id="Veggo_Burger" style="float: left; width:33%;">
+        <div class="Burger Veggo_Burger">
 
-          <h3>Veggo Burgare</h3>
+          <h3>Veggo Burger</h3>
 
-          <img src="https://static01.nyt.com/images/2020/01/22/dining/jo-black-bean-burgers/merlin_167531589_227b9414-ffad-4b44-ae53-67483bd2bae5-articleLarge.jpg" alt="Burger 2, veg" title="Another in-line element" width="60%">
+          <img src="https://static01.nyt.com/images/2020/01/22/dining/jo-black-bean-burgers/merlin_167531589_227b9414-ffad-4b44-ae53-67483bd2bae5-articleLarge.jpg" alt="Burger 2, veg" title="Another in-line element" >
 
           <dl>
             <dt>Basic Vegetarian Burger, 130kr</dt>
@@ -55,11 +62,11 @@
           </dl>
         </div>
 
-        <div id="BBQ_Burger" style="float: left; width:33%;">
+        <div class="Burger BBQ_Burger">
 
-          <h3> BBQ Burgare</h3>
+          <h3> BBQ Burger</h3>
 
-          <img src="https://media-cdn.tripadvisor.com/media/photo-s/17/ba/a6/31/burger.jpg" alt="Burger 3, BBQ" title="Another in-line element" width="60%">
+          <img src="https://media-cdn.tripadvisor.com/media/photo-s/17/ba/a6/31/burger.jpg" alt="Burger 3, BBQ" title="Another in-line element" >
 
           <dl>
             <dt>BBQ Burger with fries, 160kr</dt>
