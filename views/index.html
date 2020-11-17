@@ -48,9 +48,9 @@
           <li v-if=burger.lactose>  <span class="alergi">Lactose</span></li>
           <li v-if=burger.gluten>  <span class="alergi">Gluten</span></li>
 
-            <hr>
-            <input type="checkbox" name="cb" :value=burger.name class="burgerCheckbox">
-            <label for="burger">Add {{burger.name}}</label>
+          <hr>
+          <input type="checkbox" name="cb" :value=burger.name class="burgerCheckbox">
+          <label for="burger">Add {{burger.name}}</label>
 
         </div>
       </div>
@@ -89,102 +89,80 @@
 
     <div id="Customer_information_div"> <!-- Skriv in information o beställ -->
 
-      <div id="info">  <!-- Kundinformation -->
+      <div id="info">
 
         <h2>Customer information</h2>
 
-        <h4>Delivery Information</h4>
-
-        <form class="CustInfo" action="index.html" method="post">
-
+        <form>
           <p>
-            <label for="name">First and last name</label><br>
-            <input type="text" id="name"  required="required" placeholder="First and last name" v-model="name">
+            <label for="name">Name</label><br>
+            <input type="text" id="fullname" name="fn" required="required" placeholder="First and last name">
           </p>
-
           <p>
             <label for="email">Email</label><br>
-            <input type="email" id="email"  required="required" placeholder='email' v-model="email">
+            <input type="email" id="email" name="em" required="required" placeholder="Email">
           </p>
-
-          <p>
-            <label for="street">Street</label><br>
-            <input type="text" id="street" placeholder='street' v-model="street">
-          </p>
-          <p>
-            <label for="house">House nuber</label><br>
-            <input type="text" id="house" placeholder='house' v-model="house">
-          </p>
-
-        </div>
-
-        <div id="Payment_method">
-
-          <h3>Payment Method:</h3>
-
           <p>
             <label for="PaymentMethod">Choose how to pay:</label><br>
-            <select id="PaymentMethod" name="PayMeth" v-model="Payment">
-              <option>Swish</option>
-              <option>PayPal</option>
-              <option>Card</option>
-              <option>Klarna</option>
-              <option>Cash in an envelope</option>
+            <select id="PaymentMethod" name="bm">
+              <option selected="selected" value="Card">Card</option>
+              <option value="Cash in an envelope">Cash in an envelope</option>
+              <option value="Swish">Swish</option>
+              <option value="Paypal">PayPal</option>
             </select>
           </p>
-          <span>Selected: {{Payment}}</span>
+          <p>
+            Gender<br>
+            <input type="radio" id="spelaringenroll" name="gender" value="Man" checked="checked">
+            <label for="Male">Man</label><br>
 
+            <input type="radio" id="oviktigt" name="gender" value="Kvinna">
+            <label for="Female">Woman</label><br>
+
+            <input type="radio" id="vembryrsig" name="gender" value="Icke-binär">
+            <label for="Other">Other</label><br>
+
+          </p>
         </div>
 
-        <div id="Gender_select">
-
-          <input type="radio" id="male" name="gender" value="Male" v-model="picked">
-          <label for="Male">Male</label><br>
-
-          <input type="radio" id="female" name="gender" value="Female" v-model="picked">
-          <label for="Female">Female</label><br>
-
-          <input type="radio" id="other" name="gender" value="Other" v-model="picked">
-          <label for="Other">Other</label>
-
-        </div>
-
-      </form>
-
-
-      <div id="OrderButton">
-        <button  v-on:click='isOpen = !isOpen' v-on:click="addOrder">Order</button>
-
-
-        <span  v-show="isOpen">
-          <h2>Customer details</h2>
-
-          <p>Name: {{name}}</p>
-          <p>Email: {{email}}</p>
-          <p>Street: {{street}}</p>
-          <p>House: {{house}}</p>
-          <p>PaymentMethod: {{Payment}}</p>
-          <p>Gender: {{picked}}</p></span>
-
-          <span  v-show="isOpen">
-            <h2>Order</h2>
-
-            <ul v-for="item in array">
-              <li> {{item}} </li>
-            </ul>
-
-        </div>
       </div>
 
+    </form>
 
-    </main>
+<button v-on:click="addOrder" id="OrderButton" type="submit"> Send Order
+</button>
+<br>
+<div v-if="hasordered">
+  <p>Orderbekräftelse</p>
 
-    <hr><!-- Streck -->
+  <p>Kunduppgifter:</p>
 
-    <footer>
+  <ul style="list-style-type:none;">
+    <li> Name: {{persinfo[0]}} </li>
+    <li> Email: {{persinfo[1]}} </li>
+    <li> PaymentMethod: {{persinfo[2]}} </li>
+    <li> Gender: {{persinfo[3]}} </li>
+  </ul>
 
-      <p> &COPY Egon Axelsson, 2020, STS3 IT</p>
+  <p class="bekraftelse">Order:</p>
 
-    </footer>
-  </body>
-  </html>
+  <ul v-for="item in array">
+    <li> {{item}} </li>
+  </ul>
+
+</div>
+------------------------------------
+    </div>
+
+
+  </main>
+
+  <hr><!-- Streck -->
+
+  <footer>
+
+    <p> &COPY Egon Axelsson, 2020, STS3 IT</p>
+
+  </footer>
+</body>
+</html>

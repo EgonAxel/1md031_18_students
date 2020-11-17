@@ -21,7 +21,10 @@ var Info = new Vue({
     Payment   : 'Swish',
     picked    : '',
 
+    persinfo: [],
     array: [],
+
+    bestallt: "",
 
     hasordered: false,
 
@@ -32,6 +35,7 @@ var Info = new Vue({
           this.isOpen = !this.isOpen
       },
   addOrder: function(event) {
+      this.persinfo = valueArray();
       this.array = orderArray();
       this.hasordered = true;
   }

@@ -7,7 +7,19 @@ function MenuItem(name, price, kCal, lactose, gluten, imgURL) {
   this.gluten = gluten;
   this.imgURL = imgURL;
 }
+//-----------------------------------------------
+function valueArray() {
+  var name = document.getElementById('fullname').value
+  var email = document.getElementById('email').value
+  var betalning = document.getElementById('PaymentMethod').value
+  var kon = document.querySelector('input[name="gender"]:checked').value
 
+  var arr = [name, email, betalning, kon];
+
+  return arr;
+
+}
+//-----------------------------------------
 function orderArray() {
 
   var checkboxes = document.getElementsByName('cb');
