@@ -7,3 +7,19 @@ function MenuItem(name, price, kCal, lactose, gluten, imgURL) {
   this.gluten = gluten;
   this.imgURL = imgURL;
 }
+
+function orderArray() {
+
+  var checkboxes = document.getElementsByName('cb');
+  var burgarval2 = [];
+
+  for (var i = 0; i < checkboxes.length; i++) {
+    if (checkboxes[i].checked) {
+      burgarval2.push(checkboxes[i].value);
+    }
+  }
+
+  var matarr = burgarval2;
+
+  return matarr;
+}

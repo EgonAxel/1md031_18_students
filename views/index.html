@@ -16,13 +16,12 @@
 
   <script src="js/js_script.js" defer></script>
   <script src="js/vue_script.js" defer></script>
- <!-- DOLEDOLEDOLE -->
 
 </head>
 
 <body>
 
-  <main>
+  <main id='main'>
 
     <div id="Top">
 
@@ -37,130 +36,155 @@
 
       <p>This is where you execute burger selection</p>
       <div class = 'BurgerGrid'>
-      <div class ='Burger_menu Burger'  v-for='burger in burgers'>
 
-      <h3>  {{burger.name}} </h3>
+        <div class ='Burger_menu Burger'  v-for='burger in burgers'>
 
-        <img :src="burger.imgURL">
+          <h3>  {{burger.name}} </h3>
 
-        <li>{{burger.price}}</li>
-        <li>{{burger.kCal}}</li>
-        <li v-if=burger.lactose>  <span class="alergi">Lactose</span></li>
-        <li v-if=burger.gluten>  <span class="alergi">Gluten</span></li>
+          <img :src="burger.imgURL">
 
-</div>
-</div>
+          <li>{{burger.price}}</li>
+          <li>{{burger.kCal}}</li>
+          <li v-if=burger.lactose>  <span class="alergi">Lactose</span></li>
+          <li v-if=burger.gluten>  <span class="alergi">Gluten</span></li>
 
-<div id="Beer_menu">
-  <table align="center">
-    <thead>
-      <tr>
-        <th>Beer name</th>
-        <th>Type</th>
-        <th>Price</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Samuel Adams Boston Lager</td>
-        <td>Lager</td>
-        <td>69.00</td>
-      </tr>
-      <tr>
-        <td>Marble Brewery Earl Grey IPA</td>
-        <td>India Pale Ale</td>
-        <td>79.00</td>
-      </tr>
-      <tr>
-        <td>Innis &amp; Gunn Oak Aged</td>
-        <td>Ale</td>
-        <td>55.00</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+            <hr>
+            <input type="checkbox" name="cb" :value=burger.name class="burgerCheckbox">
+            <label for="burger">Add {{burger.name}}</label>
 
-</div>
+        </div>
+      </div>
 
-<div id="Customer_information_div"> <!-- Skriv in information o beställ -->
 
-  <div id="info">  <!-- Kundinformation -->
+      <div id="Beer_menu">
+        <table align="center">
+          <thead>
+            <tr>
+              <th>Beer name</th>
+              <th>Type</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Samuel Adams Boston Lager</td>
+              <td>Lager</td>
+              <td>69.00</td>
+            </tr>
+            <tr>
+              <td>Marble Brewery Earl Grey IPA</td>
+              <td>India Pale Ale</td>
+              <td>79.00</td>
+            </tr>
+            <tr>
+              <td>Innis &amp; Gunn Oak Aged</td>
+              <td>Ale</td>
+              <td>55.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-    <h2>Customer information</h2>
+    </div>
 
-    <h4>Delivery Information</h4>
+    <div id="Customer_information_div"> <!-- Skriv in information o beställ -->
 
-    <form class="CustInfo" action="index.html" method="post">
+      <div id="info">  <!-- Kundinformation -->
 
-      <p>
-        <label for="name">First and last name</label><br>
-        <input type="text" id="name" name="name" required="required" placeholder="First and last name">
-      </p>
+        <h2>Customer information</h2>
 
-      <p>
-        <label for="email">Email</label><br>
-        <input type="email" id="email" name="em" required="required" placeholder="E-mail address">
-      </p>
+        <h4>Delivery Information</h4>
 
-      <p>
-        <label for="street">Street</label><br>
-        <input type="text" id="street" name="street" placeholder="Street">
-      </p>
-      <p>
-        <label for="house">House nuber</label><br>
-        <input type="text" id="house" name="house" placeholder="House nr">
-      </p>
-    </form>
+        <form class="CustInfo" action="index.html" method="post">
 
-  </div>
+          <p>
+            <label for="name">First and last name</label><br>
+            <input type="text" id="name"  required="required" placeholder="First and last name" v-model="name">
+          </p>
 
-  <div id="Payment method">
+          <p>
+            <label for="email">Email</label><br>
+            <input type="email" id="email"  required="required" placeholder='email' v-model="email">
+          </p>
 
-    <h3>Payment Method:</h3>
+          <p>
+            <label for="street">Street</label><br>
+            <input type="text" id="street" placeholder='street' v-model="street">
+          </p>
+          <p>
+            <label for="house">House nuber</label><br>
+            <input type="text" id="house" placeholder='house' v-model="house">
+          </p>
 
-    <form class="PaymentInfo" action="index.html" method="post">
+        </div>
 
-      <p>
-        <label for="PaymentMethod">Choose how to pay:</label><br>
-        <select id="PaymentMethod" name="PayMeth">
-          <option selected="selected">Swish</option>
-          <option>PayPal</option>
-          <option>Card</option>
-          <option>Klarna</option>
-          <option>Cash in an envelope</option>
-        </select>
-      </p>
-    </form>
-  </div>
+        <div id="Payment_method">
 
-  <div id="Gender select">
+          <h3>Payment Method:</h3>
 
-    <form class="GenderInfo" action="index.html" method="post">
+          <p>
+            <label for="PaymentMethod">Choose how to pay:</label><br>
+            <select id="PaymentMethod" name="PayMeth" v-model="Payment">
+              <option>Swish</option>
+              <option>PayPal</option>
+              <option>Card</option>
+              <option>Klarna</option>
+              <option>Cash in an envelope</option>
+            </select>
+          </p>
+          <span>Selected: {{Payment}}</span>
 
-      <input type="radio" id="male" name="gender" value="male">
-      <label for="male">Male</label><br>
+        </div>
 
-      <input type="radio" id="female" name="gender" value="female">
-      <label for="female">Female</label><br>
+        <div id="Gender_select">
 
-      <input type="radio" id="other" name="gender" value="other">
-      <label for="other">Other</label>
+          <input type="radio" id="male" name="gender" value="Male" v-model="picked">
+          <label for="Male">Male</label><br>
 
-    </form>
-  </div>
-</div>
+          <input type="radio" id="female" name="gender" value="Female" v-model="picked">
+          <label for="Female">Female</label><br>
 
-<div id="OrderButton">
-  <button v-on:click="markDone()">Klart</<button>
-</div>
-</main>
+          <input type="radio" id="other" name="gender" value="Other" v-model="picked">
+          <label for="Other">Other</label>
 
-<hr><!-- Streck -->
+        </div>
 
-<footer>
+      </form>
 
-  <p> &COPY Egon Axelsson, 2020, STS3 IT</p>
 
-</footer>
-</body>
-</html>
+      <div id="OrderButton">
+        <button  v-on:click='isOpen = !isOpen' v-on:click="addOrder">Order</button>
+
+
+        <span  v-show="isOpen">
+          <h2>Customer details</h2>
+
+          <p>Name: {{name}}</p>
+          <p>Email: {{email}}</p>
+          <p>Street: {{street}}</p>
+          <p>House: {{house}}</p>
+          <p>PaymentMethod: {{Payment}}</p>
+          <p>Gender: {{picked}}</p></span>
+
+          <span  v-show="isOpen">
+            <h2>Order</h2>
+
+            <ul v-for="item in array">
+              <li> {{item}} </li>
+            </ul>
+
+        </div>
+      </div>
+
+
+    </main>
+
+    <hr><!-- Streck -->
+
+    <footer>
+
+      <p> &COPY Egon Axelsson, 2020, STS3 IT</p>
+
+    </footer>
+  </body>
+  </html>
