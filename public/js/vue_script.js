@@ -23,6 +23,7 @@ var Info = new Vue({
     ordernr: 0,
     bestallt: "",
     hasordered: false,
+    location: [],
   },
   methods:{
 
@@ -37,6 +38,7 @@ var Info = new Vue({
       this.array = orderArray();
       this.persinfo = valueArray();
       this.hasordered = true;
+      this.location = this.orders.T.details;
 
       socket.emit("addOrder", {
         orderId: this.getNext(),

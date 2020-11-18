@@ -142,18 +142,19 @@
   </button>
   <br>
   <div v-if="hasordered">
-    <p>Order Confirmation</p>
+    <h1>Order Confirmation</h1>
 
-    <p>Customer Information:</p>
+    <h2>Customer Information:</h2>
 
     <ul style="list-style-type:none;">
       <li> Name: {{persinfo[0]}} </li>
       <li> Email: {{persinfo[1]}} </li>
       <li> PaymentMethod: {{persinfo[2]}} </li>
       <li> Gender: {{persinfo[3]}} </li>
+      <li> Deliver to: {{location}}</li>
     </ul>
 
-    <p>Order:</p>
+    <h2>Order:</h2>
 
     <ul v-for="item in array">
       <li> {{item}} </li>
