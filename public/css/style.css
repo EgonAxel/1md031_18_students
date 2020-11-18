@@ -63,6 +63,10 @@ body {
   padding: 20pt;
 
 }
+#Beer_menu {
+  text-align: center;
+}
+
 #Beer_menu table{
   padding: 5pt;
   border-style: dashed;

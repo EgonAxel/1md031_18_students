@@ -10,7 +10,6 @@ var BurgerMenu = new Vue({
       new MenuItem(food[1]['name'], food[1]['price'], food[1]['kCal'], food[1]['lactose'], food[1]['gluten'], food[1]['img']),
       new MenuItem(food[2]['name'], food[2]['price'], food[2]['kCal'], food[2]['lactose'], food[2]['gluten'], food[2]['img']),
     ]
-
   }
 })
 
@@ -61,7 +60,6 @@ var Info = new Vue({
             y: event.clientY - 10 - location.y
           }}
         }
-
       }
     }
   })

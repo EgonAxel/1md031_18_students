@@ -55,6 +55,7 @@
 
 
       <div id="Beer_menu">
+        <h3>'Beers can not be orded, only consumed on site'</h3>
         <table align="center">
           <thead>
             <tr>
@@ -126,7 +127,7 @@
     </div>
 
     <div id='map'>
-      <h1> Click in the map! </h1>
+      <h1> Click on your adress! </h1>
       <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
       <div class="view-box">
         <div id="dots" v-on:click="displayOrder">
@@ -138,30 +139,30 @@
     </div>
 
 
-  <button v-on:click="addOrder" id="OrderButton" type="submit"> Send Order
-  </button>
-  <br>
-  <div v-if="hasordered">
-    <h1>Order Confirmation</h1>
+    <button v-on:click="addOrder" id="OrderButton" type="submit"> Send Order
+    </button>
+    <br>
+    <div v-if="hasordered">
+      <h1>Order Confirmation</h1>
 
-    <h2>Customer Information:</h2>
+      <h2>Customer Information:</h2>
 
-    <ul style="list-style-type:none;">
-      <li> Name: {{persinfo[0]}} </li>
-      <li> Email: {{persinfo[1]}} </li>
-      <li> PaymentMethod: {{persinfo[2]}} </li>
-      <li> Gender: {{persinfo[3]}} </li>
-      <li> Deliver to: {{location}}</li>
-    </ul>
+      <ul style="list-style-type:none;">
+        <li> Name: {{persinfo[0]}} </li>
+        <li> Email: {{persinfo[1]}} </li>
+        <li> PaymentMethod: {{persinfo[2]}} </li>
+        <li> Gender: {{persinfo[3]}} </li>
+        <li> Deliver to: {{location}}</li>
+      </ul>
 
-    <h2>Order:</h2>
+      <h2>Order:</h2>
 
-    <ul v-for="item in array">
-      <li> {{item}} </li>
-    </ul>
+      <ul v-for="item in array">
+        <li> {{item}} </li>
+      </ul>
 
+    </div>
   </div>
-</div>
 
 
 </main>
@@ -170,7 +171,7 @@
 
 <footer>
 
-  <p> &COPY Egon Axelsson, 2020, STS3 IT</p>
+  <p> &COPY GoBurger365 Egon Axelsson, 2020, STS3 IT</p>
 
 </footer>
 </body>
